@@ -4,7 +4,7 @@ author: "R Assignment 1"
 date: "Due Thursday, September 1 by 5pm on your GitHub repositories"
 output: html_document
 ---
-
+Good work overall, but make sure to change to eval=TRUE so I can see your output.  16/18
 **Instructions:** The entirety of this assignment must be submitted as an R Markdown file (.Rmd) on your GitHub repository.  Use the .Rmd note handout files and the R Markdown cheat sheet as guidelines.  You are encouraged to save this HW1.Rmd file and fill in the questions with your answers, then submit.  **I should be able to knit your .Rmd file and compile your code myself, so make sure you do some bug checks before submitting!** (I.e., knit the document yourself a couple times and search for errors.)
 
 Consider Example 2 in the notes.  2 dice are rolled, one red and one white.  Let $Y$ be the random variable that denotes the maximum value of the two rolls.  We will use simulation to find the mean and variance of $Y$, and then verify that our simulated results match what we would expect theoretically.
@@ -36,7 +36,7 @@ dd <- data.frame(HighestRoll=y,probs = py)
 ggplot(aes(x=HighestRoll,y=probs),data=dd) + geom_bar(stat='identity') + 
   ylab('P(Y=y)') + ggtitle('pmf of Y')
 ```
-
+Plot doesn't compile (used eval=FALSE); -1
 3. (2pts)  Consider the random variable $Z=2Y+1$.  What is $E(Z)$ and $Var(Z)$?  Show all work. 
 ```{r,eval=FALSE}
 yz <- c(3,5,7,9,11,13)
@@ -87,7 +87,7 @@ ggplot(aes(x=as.factor(many.y)),data=df) + geom_bar(aes(y=(..count..)/(sum(..cou
 ```
 How does it compare with with your theoretical pmf?
 The results are almost identical. Replicating this 1000 times gets the variance and means close to the theoretical pmf.
-
+Again, plot doesn't compile; -1
 6. (1pt)  What is the mean of the 1000 realizations?
 ```{r,eval=FALSE}
 MEAN <-mean(many.y)
@@ -120,7 +120,7 @@ one.Z()
 many.Z <- replicate(1000,one.Z())
 many.Z
 ```
-
+Don't need a new function!  Just define Z as 2*Y-1 and look at mean and variance of Z this way. 
 10. (1pt)  What is the mean of $Z$?
 ```{r,eval=FALSE}
 MEANZ <- mean(many.Z)
